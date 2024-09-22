@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import jakarta.validation.Valid;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -52,7 +54,7 @@ public class RunController {
     //post
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
-    void createRunFromRepo(@RequestBody Run run){
+    void createRunFromRepo(@Valid @RequestBody Run run){
         runRepository.createRun(run);
 
     }
