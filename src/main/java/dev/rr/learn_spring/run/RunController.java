@@ -33,49 +33,48 @@ public class RunController {
 
 
     
-    //@GetMapping("/api/runs")
-    @GetMapping("")
-    List <Run> findAllFromRepo(){
-        return runRepository.findAll();
-    }
+//     //@GetMapping("/api/runs")
+//     @GetMapping("")
+//     List <Run> findAllFromRepo(){
+//         return runRepository.findAll();
+//     }
 
 
-    @GetMapping("/{id}")
-    Run findIdFromRepo(@PathVariable Integer id){
-        Optional <Run> run = runRepository.findById(id);
+//     @GetMapping("/{id}")
+//     Run findIdFromRepo(@PathVariable Integer id){
+//         Optional <Run> run = runRepository.findById(id);
 
-        if(run.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        }
+//         if(run.isEmpty()){
+//             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//         }
 
-        return run.get();
-    }
+//         return run.get();
+//     }
 
-    //post
-    @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("")
-    void createRunFromRepo(@Valid @RequestBody Run run){
-        runRepository.createRun(run);
+//     //post
+//     @ResponseStatus(HttpStatus.CREATED)
+//     @PostMapping("")
+//     void createRunFromRepo(@Valid @RequestBody Run run){
+//         runRepository.createRun(run);
 
-    }
+//     }
     
-    //put
+//     //put
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping("/{id}")
+//     @ResponseStatus(HttpStatus.NO_CONTENT)
+//     @PutMapping("/{id}")
 
-    void updateFromRepo(@RequestBody Run run, @PathVariable Integer id){
-        runRepository.update(run, id);
+//     void updateFromRepo(@RequestBody Run run, @PathVariable Integer id){
+//         runRepository.update(run, id);
 
-    }
+//     }
 
-    //delete
+//     //delete
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id}")
+//     @ResponseStatus(HttpStatus.NO_CONTENT)
+//     @DeleteMapping("/{id}")
 
-    void deleteFromRepo(@PathVariable Integer id){
-        runRepository.delete(id);   
-    }
-
+//     void deleteFromRepo(@PathVariable Integer id){
+//         runRepository.delete(id);   
+//     }
 }

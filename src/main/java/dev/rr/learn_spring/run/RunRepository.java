@@ -14,38 +14,5 @@ import java.util.Optional;
 public class RunRepository {
     private List<Run> runs = new ArrayList<>(); //Type Run record. A sortof data storage to hold all the runs.
 
-    List<Run> findAll(){
-        return runs;
-    }
-
-    Optional<Run> findById(Integer id){
-
-        return runs.stream().filter(run -> run.id() == id).findFirst();
-
-    }
-
-    void createRun(Run run){
-        runs.add(run);
-    }
-
-    void update(Run run, Integer id){
-        Optional <Run> existingRun = findById(id);
-
-        if(existingRun.isPresent()){
-            runs.set(runs.indexOf(existingRun.get()), run);
-        }
-    }
-
-    void delete(Integer id){
-        runs.removeIf(run->run.id().equals(id));
-    }
-
-    @PostConstruct // Does initialisation. Method that needs to be executed after DI is done.
-
-    private void init(){
-        //code
-        runs.add(new Run(1, "Nice Run", LocalDateTime.now(), LocalDateTime.now().plus(1, ChronoUnit.HOURS), 3, Location.OUTDOOR));
-        runs.add(new Run(2, "Super Run", LocalDateTime.now(), LocalDateTime.now().plus(2, ChronoUnit.HOURS), 3, Location.OUTDOOR));
-
-    }
+    
 }
