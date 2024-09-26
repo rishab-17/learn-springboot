@@ -34,22 +34,22 @@ public class RunController {
 
     
 //     //@GetMapping("/api/runs")
-//     @GetMapping("")
-//     List <Run> findAllFromRepo(){
-//         return runRepository.findAll();
-//     }
+    @GetMapping("")
+    List <Run> findAllFromRepo(){
+        return runRepository.findAll();
+    }
 
 
-//     @GetMapping("/{id}")
-//     Run findIdFromRepo(@PathVariable Integer id){
-//         Optional <Run> run = runRepository.findById(id);
+    @GetMapping("/{id}")
+    Run findIdFromRepo(@PathVariable Integer id){
+        Optional <Run> run = runRepository.findById(id);
 
-//         if(run.isEmpty()){
-//             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-//         }
+        if(run.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
 
-//         return run.get();
-//     }
+        return run.get();
+    }
 
 //     //post
 //     @ResponseStatus(HttpStatus.CREATED)

@@ -31,6 +31,8 @@ public class LearnSpringApplication {
 
 	}
 
+
+	//lanbda expression in java?
 	@Bean
 	CommandLineRunner runner(){
 		return args ->{
